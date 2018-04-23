@@ -11,6 +11,9 @@
     <input type="text" id="search"/>
     <label for"type">Type</label>
     <input type="radio" name="type" id="type" value="" checked>All
+    <input type="radio" name="type" id="type" value="Sweet" checked>Sweet
+    <input type="radio" name="type" id="type" value="Sour" checked>Sour
+    <input type="radio" name="type" id="type" value="Spicy" checked>Spicy
     <input type="submit" onclick="doSearch(document.getElementById('search').value, getRadioButtonValue('type'));"/>
 </div>
 <div id="total"></div>
@@ -31,14 +34,15 @@
         query.bool.must = {
           'multi_match': {
             'query': needle,
-            'fields': [ 'name^2', 'summary_processed' ]
+            'fields': [ 'name' ]
           }
         };
       }
       if ((typeof filter !== 'undefined') && (filter.length !== 0)) {
         query.bool.filter = {
-          'term': {
-            'type': filter
+          'multi_match': {
+            'query': filter,
+            'fields': [ 'name' ]
           }
         };
       }
