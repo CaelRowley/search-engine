@@ -1,0 +1,25 @@
+{
+  "name": "search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "load_recipes.js",
+  "dependencies": {
+    "angular": "^1.6.10",
+    "elasticsearch": "^14.2.2",
+    "elasticsearch-browser": "^14.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaelRowley/search-engine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaelRowley/search-engine/issues"
+  },
+  "homepage": "https://github.com/CaelRowley/search-engine#readme"
+}
