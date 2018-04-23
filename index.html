@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search demo site</title>
+    <title>Elasticsearch Demo</title>
 </head>
 <body>
-<h1>Elasticsearch client side demo</h1>
+<h1>Elasticsearch Demo</h1>
 <div id="search_container">
-    <label for"search">Search</label>
+    <label for"search">Search: </label>
     <input type="text" id="search"/>
-    <label for"type">Type</label>
     <input type="radio" name="type" id="type" value="" checked>All
     <input type="radio" name="type" id="type" value="Sweet" checked>Sweet
     <input type="radio" name="type" id="type" value="Sour" checked>Sour
@@ -23,7 +22,7 @@
   function doSearch (needle, filter) {
     var searchHost = 'http://localhost:9200/_search';
     var body = {
-      'size': 20
+      'size': 5000
     };
 
     if ((needle.length !== 0) && ((typeof filter !== 'undefined') || (filter.length !== 0))) {
